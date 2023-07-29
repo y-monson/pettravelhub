@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Dog Travel Club</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    
+    {% block content %} {% endblock %}
+
+    <footer>
+
+        <ul>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About Me</a></li>
+            <li><a href="#">Countries</a></li>
+        </ul>
+
+    </footer>
+
+</body>
+
+</html>

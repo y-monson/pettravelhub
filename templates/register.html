@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a class="active" href="register.html">Register</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html">Home</a></li>
+        </ul>    
+    </nav>
+</header>
+
+<section class="page-section">
+
+<image src="{{ url_for('static', filename='donkey.jpg') }}"></image>
+
+
+<h2>Registration Page</h2>
+
+    <form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <div>
+        {{ form.username.label }}
+        {{ form.username }}
+    </div>
+    <div>
+        {{ form.password.label }}
+        {{ form.password }}
+    </div>
+    <div>
+        {{ form.submit }}
+    </div>
+    </form>
+</section>
+
+{% endblock %}
