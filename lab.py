@@ -113,4 +113,4 @@ def update_password():
     return render_template('update_password.html', title='Update password', form=form)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
