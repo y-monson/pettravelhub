@@ -13,17 +13,24 @@
 </header>
 
 <section class="page-section">
+    <h2>About</h2>
+    <div class="container">
 
-  <image src="{{ url_for('static', filename='dogs.jpeg') }}"></image>  
+        <div class="col1">
 
-  <h2>About</h2>
-  <p>This blog started out of necessity to figure out a 
-    pain-free way to travel with my dogs around Europe. Now that I have learned 
-  some do's and don'ts, I would love to share my experience. 
-  <br>Most importantly, it is always great to hear what you have to say about your
-    experience travelling around Europe with your pet. I hope this site helps you 
-    plan out your next trip!</p>
-  </section>
+            <image src="{{ url_for('static', filename='dogs.jpeg') }}"></image>  
+        </div>
+
+        <div class="col2 padding">
+            <p>This blog started out of necessity to figure out a 
+                pain-free way to travel with my dogs around Europe. Now that I have learned 
+            some do's and don'ts, I would love to share my experience. 
+            <br>Most importantly, it is always great to hear what you have to say about your
+                experience travelling around Europe with your pet. I hope this site helps you 
+                plan out your next trip!</p>
+        </div>
+    </div>
+</section>
   
 {% endblock %}
 

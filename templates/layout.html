@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  
+  <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Dog Travel Club</title>
@@ -9,23 +9,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Signika:wght@500&display=swap" rel="stylesheet">
-</head>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
 
-<body>
+  <body>
 
-    
     {% block content %} {% endblock %}
 
     <footer>
-
-        <ul>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">About Me</a></li>
-            <li><a href="#">Countries</a></li>
-        </ul>
-
+        <div class="container container-f">
+            <div class="footer1">
+                <p>Dog Travel Club</p>
+                <p>Blog exploring traveling with your pet around Europe</p>
+            </div>
+            <div class="footer2"></div>
+                <ul>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">About Me</a></li>
+                    <li><a href="#">Countries</a></li>
+                </ul>
+            </div>
+        </div>
     </footer>
 
-</body>
+  </body>
 
 </html>
