@@ -6,7 +6,6 @@
 * {
   box-sizing: border-box;
   /* border: solid red; */
-
 }
 
 body {
@@ -25,6 +24,18 @@ nav {
   width: 90%;
   margin: 0 auto;
   align-items: center;
+  background-color: rgba(5, 5, 162, 0.7);
+  border-radius: 10px;
+}
+
+nav p {
+    color: white;
+    letter-spacing: 0.08em;
+}
+
+#header-title {
+    font-weight: 700;
+    font-size: 1.5em;
 }
 
 nav ul {
@@ -40,22 +51,26 @@ nav li {
 nav a, a {
   font-size: 20px;
   text-decoration: none;
-  /* color: rgb(66, 0, 128); */
-  color: navy;
+  color: white;
+  cursor: pointer;
 }
 
 nav a:hover:not(.active){
-  color: rgba(255, 0, 179, 0.8);  
-
+  color: rgba(5, 5, 162, 0.7);  
 }
 
 li a.active {
-  color: rgba(255, 0, 179, 0.8);
+  color: rgb(5, 5, 162);
+  border: solid #f8f8f8;
+  background-color: #f8f8f8;
+  padding: 0.3em;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 /* End of main nav bar ---------------------------- */
 
-/* section class="page-title" -----------------------------*/
+/* Landing page -----------------------------*/
 .page-title {
   height: 700px;
   background-image: url("cover.jpg");
@@ -79,53 +94,56 @@ li a.active {
   padding-bottom: 25px;
 }
 
-#blue {
-  /* color: hsl(210, 100%, 40%); */
-  color: navy;
-  font-size: 50px;
-  letter-spacing: 7px;
-} 
-
 #get-started {
-  background-color: rgba(255, 0, 179, 0.8);
-  color: rgba(255, 255, 255, 1);
+  background-color: rgb(5, 5, 162);
+  color: white;
   font-size: 30px;
   height: 60px;
   padding: 10px;
   margin-top: 25px;
   letter-spacing: 7px;
-  border-radius: 10px;
+  border-radius: 35px;
+  cursor: pointer;
 }
 
+#get-started:hover {
+    background-color: rgba(5, 5, 162, 0.7);
+    cursor: pointer;
+}
+/* End of Landing Page */
+
+/* Styles for page section, container, column */
 .page-section {
   width: 90%;
   margin: 0 auto;
   background-color: white;
   font-size: large;
   margin-bottom: 3em;
-  
 }
 
 .container {
   display: flex;
   background-color: #f8f8f8;
   border-radius: 10px;
-  
 }
 
 .col1 {
   width: 100%;
-  padding:1em;
-  
+  padding: 1em;
 }
 
 .col2 {
-  width: 80%;
-  
+  width: 100%;
+  padding: 1em; 
 }
 
+/* Styles for the input form */
 .box {
   display: flex;
+}
+
+.submit {
+    display: flex;
 }
 
 .label {
@@ -143,29 +161,28 @@ li a.active {
   border: none;
   cursor: pointer;
   padding: 0.7em;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 img {
   width: 100%;
   box-shadow: 0 0 10px rgba(0,0,0, 0.7);
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 .section-title {
   font-family: 'Signika', sans-serif;
   text-align: center;
-  color: navy;
+  color: rgb(5, 5, 162);
   padding: 10px;
 }
 
 h2 {
-  color: navy;
+  color: rgb(5, 5, 162);
   font-family: 'Signika', sans-serif;
   padding: 1.5em;
   text-align: center;
-  border-top: solid gray 1px;
-  font-size: 2rem;
+  font-size: 2em;
   letter-spacing: 2px;
 }
 
@@ -174,53 +191,64 @@ p {
 }
 
 .submit-button {
-  background-color: rgba(255, 0, 179, 0.8);
+  background-color: rgb(5, 5, 162);
   border: none;
+  color: white;
   font-size: 1em;
   padding: 0.5em 2.5em;
-  width: 50%;
-  color: navy;
-  margin-top: 1em;
-  margin-left: 4em;
-  border-radius: 10px;
+  border-radius: 20px;
   letter-spacing: 4px;
+  cursor: pointer;
+  margin: 0 auto;
+  margin-top: 1em;
 }
 .submit-button:hover {
-  background-color: rgba(255, 0, 179, 0.8);
+  background-color: rgba(5, 5, 162, 0.7);
   cursor: pointer;
 }
+/* End of submit form */
 
-.padding {
+/* About page */
+.col2 p {
+    padding: 2em 2em 1em 2em;
+}
+
+#border {
+    border-bottom: solid grey 1px;
+    margin-left: 7em;
+    margin-right: 7em;
+    padding-top: 0;
+}
+
+strong {
+    font-size: 1.2em;
+    font-family: 'Signika', sans-serif;
+}
+/* End of About page */
+
+/* Styles for Blog posts */
+
+li {
+    list-style: none;
+}
+
+h3 {
+    color: rgb(5, 5, 162);
+    padding-top: 1.3em;
+    padding-bottom: 0.5em;
+    font-weight: 200;
+}
+
+#post-spacing {
+    padding-top: 0.5em;
+}
+
+/* Styles for flash messages */
+
+.flash-msg {
+    color: rgb(11, 198, 164);
     padding: 1em;
+    text-align: center;
 }
 
-/* FOOTER */
-
-footer {
-  padding: 2em;
-  color: gray;
-  background-color: #f8f8f8;
-  width: 90%;
-  margin: 0 auto;
-  border-radius: 10px;
-}
-
-footer li {
-  list-style-type: none;
-  padding: 2em;
-  display:inline-block;
-  
-}
-footer a {
-  text-decoration: none;
-  color: gray;
-  font-weight: 100;
-  font-size: 0.9rem;
-}
-
-.container-f {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    align-items: center;
-}
+/* End of flash messages */
