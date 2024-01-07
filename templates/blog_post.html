@@ -10,39 +10,46 @@
     </div>
     <div class="col2">
         <ul>
-            <li><a class="active" href="update_password.html">Update Password</a></li>
+            <li><a href="update_password.html">Update Password</a></li>
             <li><a href="login.html">Login</a></li>
             <li><a href="register.html">Register</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="blog_post.html">Blog Posts</a></li>
+            <li><a class="active" href="blog_post.html">Blog Posts</a></li>
         </ul> 
     </div>   
   </nav>
 </header>
 <section class="page-section">
-  <h2>Password Update Page</h2>
+  <h2>Blog Post Entry Page</h2>
   <div class="container">
     <div class="col1">
-      <img src="{{ url_for('static', filename='germany.jpeg') }}" alt="Dogs Image">
+      <img src="{{ url_for('static', filename='switzerland.jpeg') }}" alt="Dog Image">
     </div>  
     
     <div class="col2 padding">
       <form method="POST" action="">
         {{ form.hidden_tag() }}
         <div class="box">
-          {{ form.username.label(class="label") }}
-          {{ form.username(class="input") }}
+          {{ form.title.label(class="label") }}
+          {{ form.title(class="input") }}
         </div>
         <div class="box">
-          {{ form.password.label(class="label") }}
-          {{ form.password(class="input") }}
-        </div>
-        <div class="box">
-          {{ form.password_new.label(class="label") }}
-          {{ form.password_new(class="input") }}
+          {{ form.content.label(class="label") }}
+          {{ form.content(class="input", rows="8") }}
         </div>
         <div class="submit">
           {{ form.submit(class="submit-button") }}
+        </div>
+        <div class="cal2">
+            <h3>Recent Blog Posts</h3>
+            <ul>
+                {% for post in blog_posts %}
+                    <li id="post-spacing">
+                        <strong>{{ post['title'] }}</strong><br>
+                        {{ post['content']|safe }}
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
       </form>
     </div>
