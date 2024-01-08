@@ -90,7 +90,6 @@ def login():
                     user = User(username)
                     # Log in the user
                     login_user(user)
-                    flash('Login successful!')
                     return redirect(url_for('blog_post'))
 
     return render_template('login.html', title='Log in', form=form)
@@ -129,7 +128,7 @@ def update_password():
             f.write(''.join(updated_file))
 
             flash('Password update successful!', 'success')
-            return redirect(url_for('home'))
+            return redirect(url_for('blog_post'))
 
     return render_template('update_password.html', title='Update password', form=form)
 
