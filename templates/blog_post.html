@@ -1,10 +1,10 @@
 {% extends 'layout.html' %}
 {% block content %}
 <header>
-  <nav>
+  <nav class="container-nav">
     <div class="col1">
         <div>
-            <p id="header-title">Dog Travel Club</p>
+            <p id="header-title">Pet Travel Hub</p>
             <p>Blog exploring traveling with your pet around Europe</p>
         </div>
     </div>
@@ -27,31 +27,38 @@
     </div>  
     
     <div class="col2 padding">
-      <form method="POST" action="">
-        {{ form.hidden_tag() }}
-        <div class="box">
-          {{ form.title.label(class="label") }}
-          {{ form.title(class="input") }}
-        </div>
-        <div class="box">
-          {{ form.content.label(class="label") }}
-          {{ form.content(class="input", rows="8") }}
-        </div>
-        <div class="submit">
-          {{ form.submit(class="submit-button") }}
-        </div>
-        <div class="cal2">
-            <h3>Recent Blog Posts</h3>
-            <ul>
-                {% for post in blog_posts %}
-                    <li id="post-spacing">
-                        <strong>{{ post['title'] }}</strong><br>
-                        {{ post['content']|safe }}
-                    </li>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for msg in messages %}
+                <div class="flash-msg">{{ msg }}</div>
                 {% endfor %}
-            </ul>
-        </div>
-      </form>
+            {% endif %}
+        {% endwith %}
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <div class="box">
+                {{ form.title.label(class="label") }}
+                {{ form.title(class="input") }}
+            </div>
+            <div class="box">
+                {{ form.content.label(class="label") }}
+                {{ form.content(class="input", rows="8") }}
+            </div>
+            <div class="submit">
+                {{ form.submit(class="submit-button") }}
+            </div>
+            <div class="cal2">
+                <h3>Recent Blog Posts</h3>
+                <ul>
+                    {% for post in blog_posts %}
+                        <li id="post-spacing">
+                            <strong>{{ post['title'] }}</strong><br>
+                            {{ post['content']|safe }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </form>
     </div>
   </div>
 </section>

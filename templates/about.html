@@ -2,10 +2,10 @@
 
 {% block content %}
 <header>
-    <nav>
+    <nav class="container-nav">
       <div class="col1">
           <div>
-              <p id="header-title">Dog Travel Club</p>
+              <p id="header-title">Pet Travel Hub</p>
               <p>Blog exploring traveling with your pet around Europe</p>
           </div>
       </div>
@@ -24,13 +24,17 @@
 <section class="page-section">
     <h2>About</h2>
     <div class="container">
-
         <div class="col1">
-
             <image src="{{ url_for('static', filename='dogs.jpeg') }}"></image>  
         </div>
-
         <div class="col2">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for msg in messages %}
+                <div class="flash-msg">{{ msg }}</div>
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
             <p><strong>T</strong>his blog started out of necessity to figure out a 
                 pain-free way to travel with my dogs around Europe. Now that I have learned 
             some do's and don'ts, I would love to share my experience. </p>

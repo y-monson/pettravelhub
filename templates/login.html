@@ -3,10 +3,10 @@
 {% block content %}
 
 <header>
-    <nav>
+    <nav class="container-nav">
       <div class="col1">
           <div>
-              <p id="header-title">Dog Travel Club</p>
+              <p id="header-title">Pet Travel Hub</p>
               <p>Blog exploring traveling with your pet around Europe</p>
           </div>
       </div>
@@ -23,37 +23,37 @@
   </header>
 
 <section class="page-section">
-  <h2>Login Page</h2>
-  <div class="container">
-    <div class="col1">
+    <h2>Login Page</h2>
+    <div class="container">
+        <div class="col1">
         <image src="{{ url_for('static', filename='cows.jpeg') }}"></image>
-    </div>
-
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for msg in messages %}
-            <div>{{ msg }}</div>
-            {% endfor %}
-        {% endif %}
-        {% endwith %}
-
+        </div>
         <div class="col2 padding">
-        <form method="POST" action="">
-        {{ form.hidden_tag() }}
-        <div class="box">
-            {{ form.username.label(class="label") }}
-            {{ form.username(class="input") }}
+
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for msg in messages %}
+                    <div class="flash-msg">{{ msg }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <div class="box">
+                    {{ form.username.label(class="label") }}
+                    {{ form.username(class="input") }}
+                </div>
+                <div class="box">
+                    {{ form.password.label(class="label") }}
+                    {{ form.password(class="input") }}
+                </div>
+                <div class="submit"> 
+                    {{ form.submit(class="submit-button") }}
+                </div>
+            </form>
         </div>
-        <div class="box">
-            {{ form.password.label(class="label") }}
-            {{ form.password(class="input") }}
-        </div>
-        <div class="submit"> 
-            {{ form.submit(class="submit-button") }}
-        </div>
-        </form>
     </div>
-  </div>
 </section>
 
 {% endblock %}

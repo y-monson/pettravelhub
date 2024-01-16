@@ -1,10 +1,10 @@
 {% extends 'layout.html' %}
 {% block content %}
 <header>
-  <nav>
+  <nav class="container-nav">
     <div class="col1">
         <div>
-            <p id="header-title">Dog Travel Club</p>
+            <p id="header-title">Pet Travel Hub</p>
             <p>Blog exploring traveling with your pet around Europe</p>
         </div>
     </div>
@@ -25,8 +25,16 @@
     <div class="col1">
       <image src="{{ url_for('static', filename='donkey.jpg') }}"></image>
     </div>  
-    
     <div class="col2 padding">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div>
+                {% for msg in messages %}
+                <p class="flash-msg">{{ msg }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+        {% endwith %}
       <form method="POST" action="">
         {{ form.hidden_tag() }}
         <div class="box">
