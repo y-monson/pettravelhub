@@ -2,7 +2,9 @@
 
 A microblog with Python Flask framework that allows users to register and share content, providing a platform for pet travel enthusiasts.
 
-## Technology: Python Flask, HTML, CSS
+### Technology
+
+Python Flask, HTML, CSS
 
 ### Functionality 
 
